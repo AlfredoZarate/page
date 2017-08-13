@@ -1,0 +1,299 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="Stylesheet" href="Projectstyle.css">
+        <link rel="Stylesheet" href="font.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>
+        QUICKGRAPHIC
+        </title>
+        <link rel="icon" href="logo.png" type="image/x-icon"/>
+    </head>
+    <header>
+        
+    <div class="menu_bar">
+			
+             <a href="Main.html" ><span class="icon-home3"></span></a>
+            <a href="graphics.php"><span class="icon-stats-dots"></span></a>
+            <a href="Information.php" ><span class="icon-table2"></span></a>
+            <a href="gallery.html" ><span class="icon-earth"></span></a>
+		</div>
+		<nav>
+			<ul>
+                
+				<li><a href="Main.html"><span class="icon-home3"></span>ABOUT</a></li>
+				<li><a href="graphics.php"><span class="icon-stats-dots"></span>STATISTICS</a></li>
+				<li><a href="Information.php"><span class="icon-table2"></span>REPORT</a></li>
+                <li><a href="gallery.html"><span class="icon-earth"></span>GALLERY</a></li>
+			</ul>
+		</nav>
+            </header>
+    <body>
+   <h1>
+        GALLERY
+        </h1>
+ 	<ul class="galeria">
+		<li><a href="#img1"><img src="imgs/1968%20Ford%20Mustang.jpg"></a></li>
+		<li><a href="#img2"><img src="imgs/1962%20LanciaA%20Delta%2016V.jpg"></a></li>
+		<li><a href="#img3"><img src="imgs/1952%20Alpine%20Renault%201300.jpg"></a></li>
+		<li><a href="#img4"><img src="imgs/1972%20Alfa%20Romeo%20GTA.jpg"></a></li>
+		<li><a href="#img5"><img src="imgs/1996%20Moto%20Guzzi%201100i.jpg"></a></li>
+		<li><a href="#img6"><img src="imgs/2001%20Ferrari%20Enzo.jpg"></a></li>
+		<li><a href="#img7"><img src="imgs/2003%20Harley-Davidson%20Eagle%20Drag%20Bike.jpg"></a></li>
+		<li><a href="#img8"><img src="imgs/dcdb2f0f93d87b2aea025148136a9e11--american-motorcycles-easy-rider.jpg"></a></li>
+		<li><a href="#img9"><img src="imgs/1958%20Setra%20Bus-9.jpg"></a></li>
+		<li><a href="#img10"><img src="imgs/2002%20Suzuki%20XREO-10.jpg"></a></li>
+		<li><a href="#img11"><img src="imgs/1969%20Corvair%20Monza-11.jpg"></a></li>
+		<li><a href="#img12"><img src="imgs/1968%20Dodge%20Charger-12.JPG"></a></li>
+		<li><a href="#img13"><img src="imgs/1969%20Ford%20Falcon-13.jpg"></a></li>
+		<li><a href="#img14"><img src="imgs/1970%20Plymouth%20Hemi%20Cuda-14.jpg"></a></li>
+		<li><a href="#img15"><img src="imgs/1957%20Chevy%20Pickup-15.jpg"></a></li>
+		<li><a href="#img16"><img src="imgs/1969%20Dodge%20Charger-16.jpg"></a></li>
+		<li><a href="#img17"><img src="imgs/1940%20Ford%20Pickup%20Truck-17.jpg"></a></li>
+		<li><a href="#img18"><img src="imgs/1993%20Mazda%20RX-7-18.jpg"></a></li>
+		<li><a href="#img19"><img src="imgs/1936%20Mercedes-Benz%20500K%20Special%20Roadster-19.jpg"></a></li>
+		<li><a href="#img20"><img src="imgs/1937%20Lincoln%20Berline-20.jpg"></a></li>
+		<li><a href="#img21"><img src="imgs/1965%20Aston%20Martin%20DB5-21.jpg"></a></li>
+		<li><a href="#img22"><img src="imgs/1980s%20Black%20Hawk%20Helicopter-22.jpg"></a></li>
+		<li><a href="#img23"><img src="imgs/1917%20Grand%20Touring%20Sedan-23.jpg"></a></li>
+		<li><a href="#img24"><img src="imgs/1948%20Porsche%20356-A%20Roadster-24.jpg"></a></li>
+		<li><a href="#img25"><img src="imgs/1995%20Honda%20Civic-25.jpg"></a></li>
+		<li><a href="#img26"><img src="imgs/1998%20Chrysler%20Plymouth%20Prowler-28.jpg"></a></li>
+		<li><a href="#img27"><img src="imgs/1911%20Ford%20Town%20Car-27.jpg"></a></li>
+		<li><a href="#img28"><img src="imgs/1964%20Mercedes%20Tour%20Bus-28.jpg"></a></li>
+	</ul>
+
+	<div class="modal" id="img1">
+		<div class="imagen">
+			<a href="#img28">&#60;</a>
+			<a href="#img2"><img src="imgs/1968%20Ford%20Mustang.jpg"></a>
+			<a href="#img2">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+	
+	<div class="modal" id="img2">
+		<div class="imagen">
+			<a href="#img1">&#60;</a>
+			<a href="#img3"><img src="imgs/1962%20LanciaA%20Delta%2016V.jpg"></a>
+			<a href="#img3">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+	
+	<div class="modal" id="img3">
+		<div class="imagen">
+			<a href="#img2">&#60;</a>
+			<a href="#img4"><img src="imgs/1952%20Alpine%20Renault%201300.jpg"></a>
+			<a href="#img4">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+	
+	<div class="modal" id="img4">
+			<div class="imagen">
+			<a href="#img3">&#60;</a>
+			<a href="#img5"><img src="imgs/1972%20Alfa%20Romeo%20GTA.jpg"></a>
+			<a href="#img5">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img5">
+		<div class="imagen">
+			<a href="#img4">&#60;</a>
+			<a href="#img6"><img src="imgs/1996%20Moto%20Guzzi%201100i.jpg"></a>
+			<a href="#img6">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img6">
+		<div class="imagen">
+			<a href="#img5">&#60;</a>
+			<a href="#img7"><img src="imgs/2001%20Ferrari%20Enzo.jpg"></a>
+			<a href="#img7">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img7">
+		<div class="imagen">
+			<a href="#img6">&#60;</a>
+			<a href="#img8"><img src="imgs/2003%20Harley-Davidson%20Eagle%20Drag%20Bike.jpg"></a>
+			<a href="#img8">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+    <div class="modal" id="img8">
+		<div class="imagen">
+			<a href="#img7">&#60;</a>
+			<a href="#img9"><img src="imgs/dcdb2f0f93d87b2aea025148136a9e11--american-motorcycles-easy-rider.jpg"></a>
+			<a href="#img9">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img9">
+		<div class="imagen">
+			<a href="#img8">&#60;</a>
+			<a href="#img10"><img src="imgs/1958%20Setra%20Bus-9.jpg"></a>
+			<a href="#img10">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+	
+	<div class="modal" id="img10">
+		<div class="imagen">
+			<a href="#img9">&#60;</a>
+			<a href="#img11"><img src="imgs/2002%20Suzuki%20XREO-10.jpg"></a>
+			<a href="#img11">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+	
+	<div class="modal" id="img11">
+		<div class="imagen">
+			<a href="#img10">&#60;</a>
+			<a href="#img12"><img src="imgs/1969%20Corvair%20Monza-11.jpg"></a>
+			<a href="#img12">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+	
+	<div class="modal" id="img12">
+			<div class="imagen">
+			<a href="#img11">&#60;</a>
+			<a href="#img13"><img src="imgs/1968%20Dodge%20Charger-12.JPG"></a>
+			<a href="#img13">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img13">
+		<div class="imagen">
+			<a href="#img12">&#60;</a>
+			<a href="#img14"><img src="imgs/1969%20Ford%20Falcon-13.jpg"></a>
+			<a href="#img14">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img14">
+		<div class="imagen">
+			<a href="#img13">&#60;</a>
+			<a href="#img15"><img src="imgs/1970%20Plymouth%20Hemi%20Cuda-14.jpg"></a>
+			<a href="#img15">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img15">
+		<div class="imagen">
+			<a href="#img14">&#60;</a>
+			<a href="#img16"><img src="imgs/1957%20Chevy%20Pickup-15.jpg"></a>
+			<a href="#img16">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+    <div class="modal" id="img16">
+		<div class="imagen">
+			<a href="#img15">&#60;</a>
+			<a href="#img17"><img src="imgs/1969%20Dodge%20Charger-16.jpg"></a>
+			<a href="#img17">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img17">
+			<div class="imagen">
+			<a href="#img16">&#60;</a>
+			<a href="#img18"><img src="imgs/1940%20Ford%20Pickup%20Truck-17.jpg"></a>
+			<a href="#img18">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img18">
+		<div class="imagen">
+			<a href="#img17">&#60;</a>
+			<a href="#img19"><img src="imgs/1993%20Mazda%20RX-7-18.jpg"></a>
+			<a href="#img19">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img19">
+		<div class="imagen">
+			<a href="#img18">&#60;</a>
+			<a href="#img20"><img src="imgs/1936%20Mercedes-Benz%20500K%20Special%20Roadster-19.jpg"></a>
+			<a href="#img20">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img20">
+		<div class="imagen">
+			<a href="#img19">&#60;</a>
+			<a href="#img21"><img src="imgs/1937%20Lincoln%20Berline-20.jpg"></a>
+			<a href="#img21">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+    <div class="modal" id="img21">
+		<div class="imagen">
+			<a href="#img20">&#60;</a>
+			<a href="#img22"><img src="imgs/1965%20Aston%20Martin%20DB5-21.jpg"></a>
+			<a href="#img22">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img22">
+			<div class="imagen">
+			<a href="#img21">&#60;</a>
+			<a href="#img23"><img src="imgs/1980s%20Black%20Hawk%20Helicopter-22.jpg"></a>
+			<a href="#img23">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img23">
+		<div class="imagen">
+			<a href="#img22">&#60;</a>
+			<a href="#img24"><img src="imgs/1917%20Grand%20Touring%20Sedan-23.jpg"></a>
+			<a href="#img24">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img24">
+		<div class="imagen">
+			<a href="#img23">&#60;</a>
+			<a href="#img25"><img src="imgs/1948%20Porsche%20356-A%20Roadster-24.jpg"></a>
+			<a href="#img25">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+		<div class="modal" id="img25">
+		<div class="imagen">
+			<a href="#img24">&#60;</a>
+			<a href="#img26"><img src="imgs/1995%20Honda%20Civic-25.jpg"></a>
+			<a href="#img26">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+    <div class="modal" id="img26">
+		<div class="imagen">
+			<a href="#img25">&#60;</a>
+			<a href="#img27"><img src="imgs/1998%20Chrysler%20Plymouth%20Prowler-28.jpg"></a>
+			<a href="#img27">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+			<div class="modal" id="img27">
+		<div class="imagen">
+			<a href="#img26">&#60;</a>
+			<a href="#img28"><img src="imgs/1911%20Ford%20Town%20Car-27.jpg"></a>
+			<a href="#img28">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+    <div class="modal" id="img28">
+		<div class="imagen">
+			<a href="#img27">&#60;</a>
+			<a href="#img1"><img src="imgs/1964%20Mercedes%20Tour%20Bus-28.jpg"></a>
+			<a href="#img1">></a>
+		</div>
+		<a class="cerrar" href="">X</a>
+	</div>
+    
+    
+    </body>
+</html>
