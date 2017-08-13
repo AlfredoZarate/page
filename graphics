@@ -1,0 +1,175 @@
+<?php
+$username="root";
+$password="12345678";
+$hostname="localhost";
+$dbhandle=mysql_connect($hostname,$username,$password)
+or die ("Connection failed");
+mysql_select_db("classicmodels(1)",$dbhandle)
+or die ("Connection Failed");
+$consul=mysql_query("SELECT COUNT(orderdetails.quantityOrdered) AS Compras, customers.customerName AS Customer FROM customers INNER JOIN orders ON customers.customerNumber=orders.customerNumber INNER JOIN orderdetails ON orders.orderNumber=orderdetails.orderNumber GROUP BY customers.customerName ORDER BY `Compras` DESC ") or die ("404 Error: Student not found");
+$num=0;
+while($row=mysql_fetch_array($consul))
+     {
+		$cliente[$numero]=$row["Customer"]; 
+		$cantidad[$numero]=$row["Compras"];
+		 $numero++;
+	 }
+
+
+$consulta1=mysql_query("SELECT employees.firstName AS Employee, COUNT(products.productName) AS Products, AVG(products.buyPrice) as Precio FROM employees INNER JOIN customers ON employees.employeeNumber=customers.salesRepEmployeeNumber INNER JOIN orders ON customers.customerNumber=orders.customerNumber INNER JOIN orderdetails ON orders.orderNumber=orderdetails.orderNumber INNER JOIN products ON orderdetails.productCode=products.productCode GROUP BY employees.firstName");
+$num1=0;
+while($rw=mysql_fetch_array($consulta1))
+     {
+		$empleado[$numero1]=$rw["Employee"]; 
+		$producto[$numero1]=$rw["Products"];
+		$precio[$numero1]=$rw["Precio"];
+		 $numero1++;
+	 }
+$consulta2=mysql_query("SELECT productlines.productLine AS line, COUNT(products.productName) AS Products, AVG(products.buyPrice) as Precio FROM employees INNER JOIN customers ON employees.employeeNumber=customers.salesRepEmployeeNumber INNER JOIN orders ON customers.customerNumber=orders.customerNumber INNER JOIN orderdetails ON orders.orderNumber=orderdetails.orderNumber INNER JOIN products ON orderdetails.productCode=products.productCode INNER JOIN productlines ON products.productLine=productlines.productLine GROUP BY productlines.productLine");
+$num2=0;
+while($rwe=mysql_fetch_array($consulta2))
+     {
+		$linea[$numero2]=$rwe["line"]; 
+		$producto1[$numero2]=$rwe["Products"];
+		$precio1[$numero2]=$rwe["Precio"];
+		 $numero2++;
+	 }
+
+
+
+?>
+<html lang="es">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <link rel="Stylesheet" href="Projectstyle.css">
+        <link rel="Stylesheet" href="font.css">
+        <link rel="Stylesheet" href="C:\AppServ\www\Practicas\hierapolis-gh-pages\assets\stylesheets">
+        <link rel="Stylesheet" href="C:\AppServ\www\Practicas\hierapolis-gh-pages\assets\javascripts">
+	
+        <meta name ="author" content ="Norfi Carrodeguas">
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="icon" href="logo.png" type="image/x-icon"/>
+        <title>
+        QUICKGRAPHIC
+        </title>
+    </head>
+    <header>
+     <div class="menu_bar">
+			
+             <a href="Main.html" ><span class="icon-home3"></span></a>
+            <a href="graphics.php"><span class="icon-stats-dots"></span></a>
+            <a href="Information.php" ><span class="icon-table2"></span></a>
+            <a href="gallery.html" ><span class="icon-earth"></span></a>
+		</div>
+ 
+		<nav>
+			<ul>
+				<li><a href="Main.html"><span class="icon-home3"></span>ABOUT</a></li>
+				<li><a href="graphics.php"><span class="icon-stats-dots"></span>STATISTICS</a></li>
+				<li><a href="Information.php"><span class="icon-table2"></span>REPORT</a></li>
+				<li><a href="gallery.html"><span class="icon-earth"></span>GALLERY</a></li>
+			</ul>
+		</nav>
+    </header>
+    <body> 
+		
+
+		<script src="Chart.js"></script>
+<div id="canvas-holder">
+	<h1>MOST PRODUCT SOLD AND QUANTITY</h1>
+<canvas id="chart-area" width="300" height="300"></canvas>
+<canvas id="chart-area2" width="300" height="300"></canvas>
+	<h1>EMPLOYEE QUANTITY OF PRODUCT SOLD AND AVERAGE OF PRODUCT</h1>
+<canvas id="chart-area3" width="600" height="300"></canvas>
+	<h1>PRODUCT LINE PRODUCTS SOLD AND AVERAGE OF PRODUCTS SOLD</h1>
+<canvas id="chart-area4" width="600" height="300"></canvas>
+</div>
+<script>
+	
+var pieData = [{value: <?php echo $cantidad[1]; ?> ,color:"#0b82e7",highlight: "#0c62ab",label:"<?php echo $cliente[1]; ?>"  },
+				{
+					value: <?php echo $cantidad[2]; ?>,
+					color: "#e3e860",
+					highlight: "#a9ad47",
+					label:  "<?php echo $cliente[2]; ?>" 
+				},
+				{
+					value: <?php echo $cantidad[3]; ?>,
+					color: "#eb5d82",
+					highlight: "#b74865",
+					label: "<?php echo $cliente[3]; ?>"
+				},
+				{
+					value: <?php echo $cantidad[4]; ?>,
+					color: "#5ae85a",
+					highlight: "#42a642",
+					label: "<?php echo $cliente[4]; ?>"
+				},
+				{
+					value: <?php echo $cantidad[5]; ?>,
+					color: "#e965db",
+					highlight: "#a6429b",
+					label: "<?php echo $cliente[5]; ?>"
+				}
+			];
+
+	var barChartData = {
+		labels : ["<?php echo $empleado[1]; ?>","<?php echo $empleado[2]; ?>","<?php echo $empleado[3]; ?>","<?php echo $empleado[4]; ?>","<?php echo $empleado[5]; ?>","<?php echo $empleado[6]; ?>","<?php echo $empleado[7]; ?>"],
+		datasets : [
+			{
+				fillColor : "#6b9dfa",
+				strokeColor : "#ffffff",
+				highlightFill: "#1864f2",
+				highlightStroke: "#ffffff",
+				data : ['<?php echo $producto[1]; ?>','<?php echo $producto[2]; ?>','<?php echo $producto[3]; ?>','<?php echo $producto[4]; ?>','<?php echo $producto[5]; ?>','<?php echo $producto[6]; ?>','<?php echo $producto[7]; ?>']
+			},
+			{
+				fillColor : "#e9e225",
+				strokeColor : "#ffffff",
+				highlightFill : "#ee7f49",
+				highlightStroke : "#ffffff",
+				data : ['<?php echo $precio[1]; ?>','<?php echo $precio[2]; ?>','<?php echo $precio[3]; ?>','<?php echo $precio[4]; ?>','<?php echo $precio[5]; ?>','<?php echo $precio[6]; ?>','<?php echo $precio[7]; ?>']
+			}
+		]
+
+	}	
+		var lineChartData = {
+			labels : ["<?php echo $linea[1]; ?>","<?php echo $linea[2]; ?>","<?php echo $linea[3]; ?>","<?php echo $linea[4]; ?>","<?php echo $linea[5]; ?>","<?php echo $linea[6]; ?>","<?php echo $linea[7]; ?>"],
+			datasets : [
+				{
+					label: "Primera serie de datos",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "#6b9dfa",
+					pointColor : "#1e45d7",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data :  ['<?php echo $producto1[1]; ?>','<?php echo $producto1[2]; ?>','<?php echo $producto1[3]; ?>','<?php echo $producto1[4]; ?>','<?php echo $producto1[5]; ?>','<?php echo $producto1[6]; ?>','<?php echo $producto1[7]; ?>']
+				},
+				{
+					label: "Segunda serie de datos",
+					fillColor : "rgba(151,187,205,0.2)",
+					strokeColor : "#e9e225",
+					pointColor : "#faab12",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)",
+					data :['<?php echo $precio1[1]; ?>','<?php echo $precio1[2]; ?>','<?php echo $precio1[3]; ?>','<?php echo $precio1[4]; ?>','<?php echo $precio1[5]; ?>','<?php echo $precio1[6]; ?>','<?php echo $precio1[7]; ?>']
+				}
+			]
+
+		}
+var ctx = document.getElementById("chart-area").getContext("2d");
+var ctx2 = document.getElementById("chart-area2").getContext("2d");
+var ctx3 = document.getElementById("chart-area3").getContext("2d");
+var ctx4 = document.getElementById("chart-area4").getContext("2d");
+window.myPie = new Chart(ctx).Pie(pieData);	
+window.myPie = new Chart(ctx2).Doughnut(pieData);				
+window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});
+window.myPie = new Chart(ctx4).Line(lineChartData, {responsive:true});
+</script>
+            
+    </body>
+</html>
