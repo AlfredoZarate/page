@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="Stylesheet" href="Projectstyle.css">
+        <link rel="Stylesheet" href="font.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>
+        QUICKGRAPHIC
+        </title>
+        <link rel="icon" href="logo.png" type="image/x-icon"/>
+    </head>
+    <header>
+        
+    <div class="menu_bar">
+			
+             <a href="Main.html" ><span class="icon-home3"></span></a>
+            <a href="graphics.php"><span class="icon-stats-dots"></span></a>
+            <a href="Information.php" ><span class="icon-table2"></span></a>
+            <a href="gallery.html" ><span class="icon-earth"></span></a>
+		</div>
+		<nav>
+			<ul>
+                
+				<li><a href="Main.html"><span class="icon-home3"></span>ABOUT</a></li>
+				<li><a href="graphics.php"><span class="icon-stats-dots"></span>STATISTICS</a></li>
+				<li><a href="Information.php"><span class="icon-table2"></span>REPORT</a></li>
+                <li><a href="gallery.html"><span class="icon-earth"></span>GALLERY</a></li>
+			</ul>
+		</nav>
+            </header>
+    <body>
+        <div style="position:fixed;left:-39%;top:100;height:90%;width:100%;"> <img src="logo.png" width="20%" height="30%"/></div>
+
+        <h1>
+        ABOUT
+        </h1>
+        <p>
+            
+      THIS BUSSINES INTELLIGENT WEB PAGE WAS DESIGNED TO GIVE YOU THE BEST SERVICE WITH OUT FORGET THE QUALITY WICH ARE THE MOST INPORTANT THINGS FOR US AS A COMPANY. AS WELL WE ARE WORRIED ABOYT YOYR BUSSINES DEVELOPMENT IN THIS SCASE WE DESIDED TO DEVELOP THIS PAGE IN ORDER TO HELP YOU TO HAVE A BETTER CONTROL IN YOUR COMPANY GROWING.
+        </p>
+        <h1>
+        MISSION
+        </h1>
+             <p>
+   WE WANT YOUR COMPANY TO BE THE BEST IN YOUR MARKET. IN ORDER TO ACHIVE THIS OBJECTIVE WE DEVELOP SECCIONS IN THIS AGE THAT HEP YOU KNOWING WICH PRODUCT YOU ARE SELLING MORE, IN WICH MONT YOU HAVE MADE THE BEST SELLS WICH OF YOUR EMPLOYEES ARE WORKING HARDER AND WICH CLIENT IS YOUR BEST CLIENT
+        </p>
+              <h1>
+        VISION
+        </h1>
+             <p>
+     WE WANT TO BECOME ONE OF THE BEST BUSSINES INTELLIGENT WEB PAGE IN ALL THE WORLD AND WE KNOW THAT THE ONLY WAY TO ACHIVE THIS GOAL IS GIVING THE BEST SERVIS THAT WE COULD. THIS MEANS THAT OUR PRIORITY IS TO GIVE OUR CLIENTS ONE OFECTIVE WAY TO DEVELOP THAIR BUSSINES AT LEAST 50% OF THE TOTAL AMOUNT OF THEIR INCOMES.
+<br>
+    IF YOU USE OUR BUSSINES INTELIGENT WE GIVE YOU THE GARANTY THAT YUR INCOMES WILL INCRES IN A PERIOD NOT LONGER THAN 6 MONTHS. 
+        </p>
+    <h1>
+     DEVELOPER
+    </h1>
+    <p>
+   
+        
+        TSU.JOSE ALFREDO RODRIGUEZ ZARATE
+        
+        
+    </p>
+    <h2>
+    <div style="center:-53;top:100;"> <img src="15941169_949437951823290_7276541839121606251_n.jpg" width="20%" height="30%"/></div>
+    </h2>
+    </body>
+</html>
