@@ -1,0 +1,213 @@
+<?php
+$username="root";
+$password="12345678";
+$hostname="localhost";
+$dbhandle=mysql_connect($hostname,$username,$password)
+or die ("Connection failed");
+mysql_select_db("classicmodels(1)",$dbhandle)
+or die ("Connection Failed");
+$employee=mysql_query("SELECT employees.firstName,employees.lastName,employees.jobTitle,COUNT(products.buyPrice) AS Sells,employees.email,employees.employeeNumber FROM employees INNER JOIN customers ON employees.employeeNumber=customers.salesRepEmployeeNumber INNER JOIN orders ON customers.customerNumber=orders.customerNumber INNER JOIN orderdetails ON orders.orderNumber=orderdetails.orderNumber INNER JOIN products ON orderdetails.productCode=products.productCode GROUP BY employees.employeeNumber ORDER BY Sells DESC");
+$customer=mysql_query("SELECT COUNT(orderdetails.quantityOrdered) AS Compras, customers.contactFirstName,customers.contactLastName,customers.phone,customers.addressLine1,customers.creditLimit FROM customers INNER JOIN orders ON customers.customerNumber=orders.customerNumber INNER JOIN orderdetails ON orders.orderNumber=orderdetails.orderNumber GROUP BY customers.customerName ORDER BY `Compras` DESC LIMIT 10") or die ("404 Error: Student not found");
+$productline=mysql_query("SELECT productlines.productLine AS PruductLine, COUNT(products.productName) AS Products,SUM(products.buyPrice) AS Average FROM productlines INNER JOIN products ON productlines.productLine=products.productLine GROUP BY productlines.productLine desc") or die ("404 Error: Student not found");
+$ordered=mysql_query("SELECT products.productName,products.productLine,products.productVendor,products.quantityInStock FROM products INNER JOIN orderdetails ON products.productCode=orderdetails.productCode ORDER BY orderdetails.quantityOrdered DESC limit 10");
+?>
+<html>
+    <head>
+      <link rel="icon" href="logo.png" type="image/x-icon"/>
+        <link rel="Stylesheet" href="Projectstyle.css">
+        <link rel="Stylesheet" href="font.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      	<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+		<script language="javascript">
+$(document).ready(function() {
+	$(".botonExcel").click(function(event) {
+		$("#datosaenviar").val( $("<div>").append( $("#Exportar_a_Excel").eq(0).clone()).html());
+		$("#FormularioExportacion").submit();
+});
+});
+</script>
+
+   
+        <title>
+        QUICKGRAPHIC
+        </title>
+    </head>
+    <header>
+     <div class="menu_bar">
+			
+             <a href="Main.html" ><span class="icon-home3"></span></a>
+            <a href="graphics.php"><span class="icon-stats-dots"></span></a>
+            <a href="Information.php" ><span class="icon-table2"></span></a>
+            <a href="gallery.html" ><span class="icon-earth"></span></a>
+		</div>
+ 
+		<nav>
+			<ul>
+				<li><a href="Main.html"><span class="icon-home3"></span>ABOUT</a></li>
+				<li><a href="graphics.php"><span class="icon-stats-dots"></span>STATISTICS</a></li>
+				<li><a href="Information.php"><span class="icon-table2"></span>REPORT</a></li>
+				<li><a href="gallery.html"><span class="icon-earth"></span>GALLERY</a></li>
+			</ul>
+		</nav>
+    </header>
+    <body>
+      
+ 
+        
+        
+        
+   
+        
+      <h1>
+      BEST EMPLOYEE
+      </h1>
+      <p>Get Report <a href="Tabla1.php" ><span class="icon-table2"></span></a></p>
+       <table class="rwd_auto fontsize" width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" id="Exportar_a_Excel" style="border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>NANE</th>
+            <th>LAST NAME</th>
+            <th>TITLE</th>
+            <th>SELLS</th>
+            <th>E-MAIL</th>
+          <th>ID</th>
+          </tr>
+            
+        <tbody>
+        
+            <?php
+ while($row=mysql_fetch_array($employee))
+     
+     
+     {
+       
+          echo "<tr><td>".$row["firstName"] . "</td>";
+          echo "<td>".$row["lastName"] . "</td>";
+          echo "<td>".$row["jobTitle"] . "</td>";
+          echo "<td>".$row["Sells"] . "</td>";
+          echo "<td>".$row["email"] . "</td>";
+          echo "<td>".$row["employeeNumber"] . "</td></tr>";
+          
+            
+   
+  }?>
+            
+        </tbody>
+         </table>
+         </form> 
+        
+    
+      <h1>
+      BEST CLIENT
+      </h1>
+      <p>Get Report <a href="Tabla2.php" ><span class="icon-table2"></span></a></p>
+        <table class="rwd_auto fontsize" width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" id="Exportar_a_Excel" style="border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>NANE</th>
+            <th>LAST NAME</th>
+            <th>PHONE</th>
+            <th>ADDRES</th>
+            <th>CREDIT</th>
+            <th>PRODUCTS BOHUGTH</th>
+          </tr>
+            
+        <tbody>
+        
+            <?php
+ while($row=mysql_fetch_array($customer))
+     
+     
+     {
+       
+          echo "<tr><td>".$row["contactFirstName"] . "</td>";
+          echo "<td>".$row["contactLastName"] . "</td>";
+          echo "<td>".$row["phone"] . "</td>";
+          echo "<td>".$row["addressLine1"] . "</td>";
+          echo "<td>".$row["creditLimit"] . "</td>";
+          echo "<td>".$row["Compras"] . "</td></tr>";
+       
+            
+   
+  }?>
+            
+        </tbody>
+    </table>
+        </form> 
+         </table>
+
+      <h1>
+      BEST PRODUCT LINE
+      </h1>
+	
+<p>Get Report <a href="Tabla3.php" ><span class="icon-table2"></span></a></p>      
+        <table class="rwd_auto fontsize" width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" id="Exportar_a_Excel" style="border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>PRODUCT LINE</th>
+            <th>PRODUCTS</th>
+            <th>AVERAGE</th>
+           
+          </tr>
+            
+        <tbody>
+        
+            <?php
+ while($row=mysql_fetch_array($productline))
+     
+     
+     {
+       
+          echo "<tr><td>".$row["PruductLine"] . "</td>";
+          echo "<td>".$row["Products"] . "</td>";
+          echo "<td>".$row["Average"] . "</td></tr>";
+       
+            
+   
+  }?>
+            
+        </tbody>
+    </table>
+	</form>
+    <h1>
+      THE MOST ORDERED PRODUCT
+      </h1>
+      
+		  <p>Get Report <a href="Tabla4.php" ><span class="icon-table2"></span></a></p>
+        <table class="rwd_auto fontsize"width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" id="Exportar_a_Excel" style="border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>PRODUCT</th>
+            <th>PRODUCT LINE</th>
+            <th>SELLER</th>
+            <th>QUANTITY IN STOCK</th>
+            
+           
+          </tr>
+            
+        <tbody>
+        
+            <?php
+ while($row=mysql_fetch_array($ordered))
+     
+     
+     {
+       
+          echo "<tr><td>".$row["productName"] . "</td>";
+          echo "<td>".$row["productLine"] . "</td>";
+          echo "<td>".$row["productVendor"] . "</td>";
+          echo "<td>".$row["quantityInStock"] . "</td></tr>";
+       
+            
+   
+  }?>
+            
+        </tbody>
+    </table>
+	</form>
+    </body>
+</html>
+<?php
+mysql_close($dbhandle);
+?>
